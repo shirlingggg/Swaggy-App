@@ -76,7 +76,7 @@ fun HomeScreen(){
 
         Button(
             onClick = {},
-            colors = ButtonDefaults.buttonColors(newPurple),
+             colors= ButtonDefaults.buttonColors(newPurple),
             shape = RoundedCornerShape(10.dp),
             modifier = Modifier.fillMaxWidth().padding(start = 20.dp, end = 20.dp)
 
