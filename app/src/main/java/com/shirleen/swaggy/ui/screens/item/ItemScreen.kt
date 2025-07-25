@@ -10,7 +10,9 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
@@ -43,12 +45,14 @@ import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
 import com.shirleen.swaggy.ui.theme.newPurple
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ItemScreen(){
+fun ItemScreen(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize()
 
@@ -127,54 +131,113 @@ fun ItemScreen(){
         Spacer(modifier = Modifier.height(10.dp))
 
 
-        //Row
-        Row(
-            modifier = Modifier.padding(start = 20.dp)
-        ) {
-            Image(
-                painter = painterResource(R.drawable.clothes),
-                contentDescription = "Clothes",
-                modifier = Modifier.size(width = 200.dp, height = 250.dp).clip(shape = RoundedCornerShape(10.dp)),
-                contentScale = ContentScale.Crop
-            )
+       Column(
+           modifier = Modifier.verticalScroll(rememberScrollState())
+       ) {
+           //Row 1- clothes
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+               Image(
+                   painter = painterResource(R.drawable.clothes),
+                   contentDescription = "Clothes",
+                   modifier = Modifier.size(width = 200.dp, height = 250.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.Crop
+               )
 
 
-            Spacer(modifier = Modifier.width(10.dp))
-            Column() {
-                Text(text = "Stylish cotton shirt", fontSize = 18.sp, fontWeight = FontWeight.Bold)
-                Spacer(modifier = Modifier.width(5.dp))
-                Text(text = "Brand: Alexander Fashion", fontSize = 15.sp)
-                Spacer(modifier = Modifier.width(5.dp))
-                Text(text = "Price: Ksh.2000", fontSize = 15.sp, textDecoration = TextDecoration.LineThrough)
-                Spacer(modifier = Modifier.width(5.dp))
-                Text(text = "Now: Ksh.1800", fontSize = 15.sp)
-                Spacer(modifier = Modifier.width(5.dp))
-                Text(text = "Material: 100% cotton", fontSize = 15.sp)
-                Spacer(modifier = Modifier.width(5.dp))
+               Spacer(modifier = Modifier.width(10.dp))
+               Column() {
+                   Text(text = "Stylish cotton shirt", fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Brand: Alexander Fashion", fontSize = 15.sp)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Price: Ksh.2000", fontSize = 15.sp, textDecoration = TextDecoration.LineThrough)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Now: Ksh.1800", fontSize = 15.sp)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Material: 100% cotton", fontSize = 15.sp)
+                   Spacer(modifier = Modifier.width(5.dp))
 
-                Row (){
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
-                    Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.DarkGray)
-                }
-                Spacer(modifier = Modifier.width(10.dp))
+                   Row (){
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.DarkGray)
+                   }
+                   Spacer(modifier = Modifier.width(10.dp))
 
 
-                Button(
-                    onClick = {},
-                    colors= ButtonDefaults.buttonColors(newPurple),
-                    shape = RoundedCornerShape(10.dp),
-                    ) {
-                    Text(text = "Buy now!")
-                }
+                   Button(
+                       onClick = {},
+                       colors= ButtonDefaults.buttonColors(newPurple),
+                       shape = RoundedCornerShape(10.dp),
+                   ) {
+                       Text(text = "Buy now!")
+                   }
 
-            }
+               }
 
-        }
+           }
 
-        //End of row
+           //End of row
+
+           Spacer(modifier = Modifier.height(10.dp))
+
+           //Row 2-dress
+           Row(
+               modifier = Modifier.padding(start = 20.dp)
+           ) {
+               Image(
+                   painter = painterResource(R.drawable.dress),
+                   contentDescription = "Dress",
+                   modifier = Modifier.size(width = 200.dp, height = 250.dp).clip(shape = RoundedCornerShape(10.dp)),
+                   contentScale = ContentScale.Crop
+               )
+
+
+               Spacer(modifier = Modifier.width(10.dp))
+               Column() {
+                   Text(text = "Stylish cotton shirt", fontSize = 18.sp, fontWeight = FontWeight.Bold)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Brand: Alexander Fashion", fontSize = 15.sp)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Price: Ksh.2000", fontSize = 15.sp, textDecoration = TextDecoration.LineThrough)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Now: Ksh.1800", fontSize = 15.sp)
+                   Spacer(modifier = Modifier.width(5.dp))
+                   Text(text = "Material: 100% cotton", fontSize = 15.sp)
+                   Spacer(modifier = Modifier.width(5.dp))
+
+                   Row (){
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = newPurple)
+                       Icon(imageVector = Icons.Default.Star, contentDescription = "", tint = Color.DarkGray)
+                   }
+                   Spacer(modifier = Modifier.width(10.dp))
+
+
+                   Button(
+                       onClick = {},
+                       colors= ButtonDefaults.buttonColors(newPurple),
+                       shape = RoundedCornerShape(10.dp),
+                   ) {
+                       Text(text = "Buy now!")
+                   }
+
+               }
+
+           }
+
+           //End of row
+
+
+
+
+       }
 
 
 
@@ -192,5 +255,5 @@ fun ItemScreen(){
 @Composable
 fun ItemScreenPreview(){
 
-    ItemScreen()
+    ItemScreen(rememberNavController())
 }
