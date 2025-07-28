@@ -1,6 +1,7 @@
 package com.shirleen.swaggy.ui.screens.category
 
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -17,6 +18,8 @@ import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Share
 import androidx.compose.material.icons.filled.ShoppingCart
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
@@ -158,13 +161,13 @@ fun CategoryScreen(navController: NavController){
 
             ) {
                 Image(
-                    painter = painterResource(R.drawable.hindu),
-                    contentDescription = "Clothes",
+                    painter = painterResource(R.drawable.sneaker),
+                    contentDescription = "Sneakers",
                     modifier = Modifier.fillMaxSize().clip(shape = RoundedCornerShape(10.dp)),
                     contentScale = ContentScale.FillBounds
                 )
                 Text(
-                    text = "Jewellery",
+                    text = "Sneakers",
                     fontSize = 24.sp,
                     fontWeight = FontWeight.Bold,
                     color = Color.White
@@ -182,18 +185,75 @@ fun CategoryScreen(navController: NavController){
         }
 
         //End of card
+        Spacer(modifier = Modifier.height(10.dp))
+
+        //Start of Column after cards
+
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.Center
+
+        ) {
+            Text(
+                text = "More categories coming soon...",
+                fontSize = 16.sp,
+                modifier = Modifier.padding(start = 45.dp)
+                )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Button(
+                onClick = {},
+                colors = ButtonDefaults.buttonColors(newPurple),
+                modifier = Modifier.padding(start = 45.dp),
+                shape = RoundedCornerShape(10.dp)
+
+
+            ) {
+                Text(text = "Explore All Products")
+            }
+
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = "Follow us on instagram @swaggy_ke",
+                textAlign = TextAlign.Center,
+                modifier = Modifier.align(alignment = Alignment.CenterHorizontally),
+                fontSize = 16.sp
+                )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Text(
+                text = "Need help? Contact us at support@swaggy.co.ke",
+                modifier = Modifier.padding(start = 40.dp),
+                fontSize = 16.sp
+            )
+
+
+            Spacer(modifier = Modifier.height(40.dp))
+
+
+            Text(
+                text = " \" Wear the vibe. Live the vibe.\"",
+                textAlign = TextAlign.Center,
+                modifier = Modifier.padding(start = 40.dp),
+                fontSize = 20.sp,
+                fontWeight = FontWeight.Bold
+            )
 
 
 
+        }
 
-
+        //End of Column after cards
 
 
 
 
     }
-
-
+    //End of Main column
 
 }
 

@@ -11,12 +11,13 @@ import com.shirleen.swaggy.ui.screens.category.CategoryScreen
 import com.shirleen.swaggy.ui.screens.contact.ContactScreen
 import com.shirleen.swaggy.ui.screens.home.HomeScreen
 import com.shirleen.swaggy.ui.screens.item.ItemScreen
+import com.shirleen.swaggy.ui.screens.splash.SplashScreen
 
 @Composable
 fun AppNavHost(
     modifier: Modifier = Modifier,
     navController: NavHostController = rememberNavController(),
-    startDestination: String = ROUT_HOME
+    startDestination: String = ROUT_SPLASH
 ) {
 
     NavHost(
@@ -41,6 +42,10 @@ fun AppNavHost(
 
         composable(ROUT_CATEGORY) {
             CategoryScreen(navController)
+        }
+
+        composable(ROUT_SPLASH) {
+            SplashScreen(navController)
         }
 
     }
