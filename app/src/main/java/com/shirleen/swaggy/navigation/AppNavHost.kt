@@ -9,8 +9,10 @@ import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.ui.screens.about.AboutScreen
 import com.shirleen.swaggy.ui.screens.category.CategoryScreen
 import com.shirleen.swaggy.ui.screens.contact.ContactScreen
+import com.shirleen.swaggy.ui.screens.detail.DetailScreen
 import com.shirleen.swaggy.ui.screens.home.HomeScreen
 import com.shirleen.swaggy.ui.screens.item.ItemScreen
+import com.shirleen.swaggy.ui.screens.scaffold.ScaffoldScreen
 import com.shirleen.swaggy.ui.screens.splash.SplashScreen
 
 @Composable
@@ -47,6 +49,14 @@ fun AppNavHost(
         composable(ROUT_SPLASH) {
             SplashScreen(navController)
         }
+        composable(ROUT_SCAFFOLD) {
+           ScaffoldScreen(navController)
+        }
+
+        composable(ROUT_DETAIL) {
+            DetailScreen(navController)
+        }
+
 
     }
 }

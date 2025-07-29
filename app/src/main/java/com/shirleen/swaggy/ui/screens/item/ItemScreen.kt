@@ -14,6 +14,7 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowForward
 import androidx.compose.material.icons.filled.Menu
 import androidx.compose.material.icons.filled.Notifications
 import androidx.compose.material.icons.filled.Search
@@ -48,6 +49,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
+import com.shirleen.swaggy.navigation.ROUT_CATEGORY
 import com.shirleen.swaggy.ui.theme.newPurple
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -82,10 +84,12 @@ fun ItemScreen(navController: NavController){
                     )
                 }
 
-                IconButton(onClick = {}) {
+                IconButton(onClick = {
+                    navController.navigate(ROUT_CATEGORY)
+                }) {
                     Icon(
-                        imageVector = Icons.Default.Notifications,
-                        contentDescription = "Notifications"
+                        imageVector = Icons.Default.ArrowForward,
+                        contentDescription = "Arrow forward"
                     )
                 }
             }

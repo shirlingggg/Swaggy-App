@@ -42,6 +42,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
+import com.shirleen.swaggy.navigation.ROUT_DETAIL
 import com.shirleen.swaggy.ui.theme.newPurple
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -203,7 +204,9 @@ fun CategoryScreen(navController: NavController){
             Spacer(modifier = Modifier.height(10.dp))
 
             Button(
-                onClick = {},
+                onClick = {
+                    navController.navigate(ROUT_DETAIL)
+                },
                 colors = ButtonDefaults.buttonColors(newPurple),
                 modifier = Modifier.padding(start = 45.dp),
                 shape = RoundedCornerShape(10.dp)
