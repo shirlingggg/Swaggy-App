@@ -57,6 +57,7 @@ import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
 import com.shirleen.swaggy.navigation.ROUT_HOME
+import com.shirleen.swaggy.navigation.ROUT_INTENT
 import com.shirleen.swaggy.navigation.ROUT_ITEM
 import com.shirleen.swaggy.ui.theme.newPurple
 
@@ -138,7 +139,9 @@ fun DetailScreen(navController: NavController){
         //FloatingActionButton
         floatingActionButton = {
             FloatingActionButton(
-                onClick = { /* Add action */ },
+                onClick = {
+                    navController.navigate(ROUT_INTENT)
+                },
                 containerColor = newPurple
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")

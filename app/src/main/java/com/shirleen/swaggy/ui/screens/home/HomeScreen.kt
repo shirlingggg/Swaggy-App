@@ -44,7 +44,8 @@ fun HomeScreen(navController: NavController){
         verticalArrangement = Arrangement.Center
     ) {
 
-        Image(painter = painterResource(R.drawable.clothes),
+        Image(
+            painter = painterResource(R.drawable.clothes),
             contentDescription = "Clothes",
             modifier = Modifier.size(300.dp).clip(shape = CircleShape),
             contentScale = ContentScale.Crop
