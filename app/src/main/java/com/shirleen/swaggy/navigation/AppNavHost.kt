@@ -9,6 +9,7 @@ import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.ui.screens.about.AboutScreen
 import com.shirleen.swaggy.ui.screens.category.CategoryScreen
 import com.shirleen.swaggy.ui.screens.contact.ContactScreen
+import com.shirleen.swaggy.ui.screens.dashboard.DashboardScreen
 import com.shirleen.swaggy.ui.screens.detail.DetailScreen
 import com.shirleen.swaggy.ui.screens.home.HomeScreen
 import com.shirleen.swaggy.ui.screens.intent.IntentScreen
@@ -60,6 +61,10 @@ fun AppNavHost(
 
         composable(ROUT_INTENT) {
             IntentScreen(navController)
+        }
+
+        composable(ROUT_DASHBOARD) {
+            DashboardScreen(navController)
         }
 
 
