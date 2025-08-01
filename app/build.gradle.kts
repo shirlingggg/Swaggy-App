@@ -64,5 +64,8 @@ dependencies {
     //Lottie Animation
     implementation("com.airbnb.android:lottie-compose:4.2.0")
 
+    //Bookmark icon
+    implementation("androidx.compose.material:material-icons-extended-android:1.7.8")
+
 
 }

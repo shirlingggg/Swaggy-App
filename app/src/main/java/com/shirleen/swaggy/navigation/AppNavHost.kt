@@ -10,6 +10,7 @@ import com.shirleen.swaggy.ui.screens.about.AboutScreen
 import com.shirleen.swaggy.ui.screens.category.CategoryScreen
 import com.shirleen.swaggy.ui.screens.contact.ContactScreen
 import com.shirleen.swaggy.ui.screens.dashboard.DashboardScreen
+import com.shirleen.swaggy.ui.screens.dashboard.DashboardScreen2
 import com.shirleen.swaggy.ui.screens.detail.DetailScreen
 import com.shirleen.swaggy.ui.screens.home.HomeScreen
 import com.shirleen.swaggy.ui.screens.intent.IntentScreen
@@ -65,6 +66,10 @@ fun AppNavHost(
 
         composable(ROUT_DASHBOARD) {
             DashboardScreen(navController)
+        }
+
+        composable(ROUT_DASHBOARD2) {
+            DashboardScreen2(navController)
         }
 
 

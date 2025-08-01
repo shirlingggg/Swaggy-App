@@ -16,9 +16,13 @@ import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.AccountCircle
 import androidx.compose.material.icons.filled.Add
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.BookmarkBorder
+import androidx.compose.material.icons.filled.DateRange
 import androidx.compose.material.icons.filled.Favorite
 import androidx.compose.material.icons.filled.Home
 import androidx.compose.material.icons.filled.Person
@@ -44,6 +48,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.focus.focusModifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -54,6 +59,7 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
+import com.shirleen.swaggy.navigation.ROUT_HOME
 import com.shirleen.swaggy.navigation.ROUT_ITEM
 import com.shirleen.swaggy.ui.theme.newPurple
 
@@ -77,19 +83,34 @@ fun DashboardScreen(navController: NavController){
             ){
                 NavigationBarItem(
                     icon = { Icon(Icons.Default.Home, contentDescription = "Home") },
-                    label = { Text("Home") },
                     selected = selectedIndex == 0,
                     onClick = { selectedIndex = 0
                         //navController.navigate(ROUT_HOME)
                     }
                 )
                 NavigationBarItem(
-                    icon = { Icon(Icons.Default.Favorite, contentDescription = "Favorites") },
-                    label = { Text("Favorites") },
+                    icon = { Icon(Icons.Default.DateRange, contentDescription = "Favorites") },
                     selected = selectedIndex == 1,
                     onClick = { selectedIndex = 1
                         // navController.navigate(ROUT_HOME)
                     }
+                )
+
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.BookmarkBorder, contentDescription = "Favorites") },
+                    selected = selectedIndex == 1,
+                    onClick = { selectedIndex = 1
+                        // navController.navigate(ROUT_HOME)
+                    }
+                )
+
+                NavigationBarItem(
+                    icon = { Icon(Icons.Default.AccountCircle, contentDescription = "Favorites") },
+                    selected = selectedIndex == 1,
+                    onClick = { selectedIndex = 1
+                        // navController.navigate(ROUT_HOME)
+                    }
+
                 )
 
 
@@ -101,7 +122,7 @@ fun DashboardScreen(navController: NavController){
             FloatingActionButton(
                 onClick = { /* Add action */ },
                 containerColor = Color.LightGray,
-                modifier = Modifier.offset(y = 40.dp)
+                modifier = Modifier.offset(y = 50.dp)
             ) {
                 Icon(Icons.Default.Add, contentDescription = "Add")
             }
@@ -112,6 +133,10 @@ fun DashboardScreen(navController: NavController){
                 modifier = Modifier
                     .padding(paddingValues)
                     .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+
+
+
             ) {
 
 
@@ -121,7 +146,9 @@ fun DashboardScreen(navController: NavController){
                     horizontalArrangement = Arrangement.SpaceBetween,
                     verticalAlignment = Alignment.CenterVertically
                 ) {
-                    Column() {
+                    Column(
+                        modifier = Modifier.padding(start = 10.dp)
+                    ) {
                         Text(text = "Hi Samantha", fontSize = 40.sp, fontWeight = FontWeight.Bold)
                         Spacer(modifier = Modifier.height(15.dp))
                         Text("Here are your projects", fontSize = 17.sp)
@@ -148,7 +175,7 @@ fun DashboardScreen(navController: NavController){
                 ) {
                     //Card
                     Card(
-                        onClick = {},
+                        onClick = {navController.navigate(ROUT_HOME)},
                         modifier = Modifier.width(150.dp).height(250.dp),
                         elevation = CardDefaults.elevatedCardElevation(5.dp),
                         //colors = CardDefaults.cardColors(newPurple)
@@ -164,8 +191,9 @@ fun DashboardScreen(navController: NavController){
                                 contentScale = ContentScale.Crop
                             )
 
+
                             Text(text = "Cryptocurrency landing page", fontSize = 17.sp, fontWeight = FontWeight.Bold, color = Color.LightGray, modifier = Modifier.padding(start = 20.dp, top = 20.dp))
-                            Spacer(modifier = Modifier.height(15.dp))
+                            Spacer(modifier = Modifier.height(10.dp))
 
                             Text(text = "12 tasks", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = Color.LightGray,  modifier = Modifier.padding(top = 250.dp, end = 45.dp))
                         }
@@ -189,12 +217,12 @@ fun DashboardScreen(navController: NavController){
                             Image(
                                 painter = painterResource(R.drawable.orange),
                                 contentDescription = "Clothes",
-                                modifier = Modifier.fillMaxWidth().height(250.dp),
-                                contentScale = ContentScale.Crop
+                                modifier = Modifier.fillMaxSize(),
+                                contentScale = ContentScale.FillBounds
                             )
 
                             Text(text = "Statistics Dashboard", fontSize = 17.sp, fontWeight = FontWeight.Bold, color = Color.LightGray, modifier = Modifier.padding(start = 20.dp, top = 20.dp))
-                            Spacer(modifier = Modifier.height(15.dp))
+                            Spacer(modifier = Modifier.height(6.dp))
 
                             Text(text = "2 tasks", fontSize = 15.sp, fontWeight = FontWeight.Bold, color = Color.LightGray,  modifier = Modifier.padding(top = 250.dp, end = 45.dp))
                         }
@@ -248,8 +276,7 @@ fun DashboardScreen(navController: NavController){
                 ) {
                     Column(
                         modifier = Modifier.padding(16.dp),
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        verticalArrangement = Arrangement.Center
+
                     ) {
                         Text(
                             text = "Personal Tasks",
@@ -257,6 +284,8 @@ fun DashboardScreen(navController: NavController){
                             fontSize = 20.sp
 
                         )
+                        Spacer(modifier = Modifier.height(10.dp))
+
 
                         //NDA Card
                         Card(
@@ -266,26 +295,82 @@ fun DashboardScreen(navController: NavController){
 
                         ) {
                             Row(
-                                verticalAlignment = Alignment.CenterVertically,
+
                             ) {
-                                Image(painter = painterResource(R.drawable.video),
-                                    contentDescription = "Video",
-                                    modifier = Modifier.size(40.dp))
+                                Box(
+                                    modifier = Modifier.fillMaxWidth()
+
+                                ) {
+                                    Image(painter = painterResource(R.drawable.video),
+                                        contentDescription = "Video",
+                                        modifier = Modifier.width(70.dp).height(70.dp).padding(start = 15.dp, top = 10.dp),
+                                        contentScale = ContentScale.FillBounds
+                                    )
 
                                     Text(
                                         text = "NDA Review for Website project",
                                         fontWeight = FontWeight.Bold,
                                         fontSize = 15.sp,
-                                        modifier = Modifier.padding(20.dp),
-                                        )
+                                        modifier = Modifier.padding(start = 10.dp, top = 20.dp).fillMaxWidth(),
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
                             }
-                            Text(
-                                text = "Today- 10pm",
-                                modifier = Modifier.padding(start = 50.dp)
-                            )
+                            Column() {
+                                Text(
+                                    text = "Today- 10pm",
+                                    modifier = Modifier.padding(start = 50.dp, end = 50.dp).fillMaxWidth(),
+                                    textAlign = TextAlign.Center
+                                )
 
+                            }
                         }
                     //End of NDA Card
+
+                        Spacer(modifier = Modifier.height(20.dp))
+
+
+                        //Email Card
+                        Card(
+                            onClick = {},
+                            colors = CardDefaults.cardColors(containerColor = Color.White),
+                            modifier = Modifier.height(100.dp).fillMaxWidth(),
+
+                            ) {
+                            Row(
+
+                            ) {
+                                Box(
+                                    modifier = Modifier.fillMaxWidth()
+
+                                ) {
+                                    Image(painter = painterResource(R.drawable.email),
+                                        contentDescription = "Video",
+                                        modifier = Modifier.width(60.dp).height(60.dp).padding(start = 15.dp, top = 10.dp),
+                                        contentScale = ContentScale.FillBounds
+                                    )
+
+                                    Text(
+                                        text = "Email Reply for Green Project",
+                                        fontWeight = FontWeight.Bold,
+                                        fontSize = 15.sp,
+                                        modifier = Modifier.padding(start = 10.dp, top = 20.dp).fillMaxWidth(),
+                                        textAlign = TextAlign.Center
+                                    )
+                                }
+                            }
+                            Column() {
+                                Text(
+                                    text = "Today- 10pm",
+                                    modifier = Modifier.padding(start = 50.dp, end = 50.dp).fillMaxWidth(),
+                                    textAlign = TextAlign.Center
+                                )
+
+                            }
+                        }
+                        //End of Email Card
+
+
 
 
                     }
