@@ -22,8 +22,16 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.NavigationBar
+import androidx.compose.material3.NavigationBarItem
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
+import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
@@ -35,10 +43,13 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
+import com.shirleen.swaggy.R.drawable.man3
 import com.shirleen.swaggy.ui.theme.newGreen
+import com.shirleen.swaggy.ui.theme.newPurple
 
 @Composable
 fun DashboardScreen2(navController: NavController){
+
     Column(
         modifier = Modifier.fillMaxSize().verticalScroll(rememberScrollState())
     ) {
@@ -98,26 +109,38 @@ fun DashboardScreen2(navController: NavController){
 
                 }
                 //End of Row
-                Text(text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
-                    modifier = Modifier.width(200.dp),
-                    color = Color.White
-                )
 
+                //Row
 
+                Row() {
+                    Text(text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis.",
+                        modifier = Modifier.width(200.dp),
+                        color = Color.White
+                    )
 
-
-
+                }
+                //End of row
             }
 
             //End of column
-
-
 
         }
 
     //End of Card
 
-        Spacer(modifier = Modifier.height(40.dp))
+        Image(
+            painter = painterResource(R.drawable.adult),
+            contentDescription = "man",
+            modifier = Modifier
+                .size(180.dp)
+                .align(alignment = Alignment.CenterHorizontally)
+                .offset(x = 130.dp, y = -150.dp),
+            contentScale = ContentScale.Crop
+
+
+
+        )
+
 
         //Row
         Row(
@@ -196,7 +219,7 @@ fun DashboardScreen2(navController: NavController){
             modifier = Modifier.padding(30.dp).horizontalScroll(rememberScrollState())
         ) {
             Column() {
-                Image(painter = painterResource(R.drawable.adobe),
+                Image(painter = painterResource(R.drawable.volume),
                     contentDescription = "",
                     contentScale =ContentScale.Crop,
                     modifier = Modifier.size(80.dp)
@@ -218,7 +241,7 @@ fun DashboardScreen2(navController: NavController){
 
 
             Column() {
-                Image(painter = painterResource(R.drawable.presentation),
+                Image(painter = painterResource(R.drawable.exel),
                     contentDescription = "",
                     contentScale =ContentScale.Crop,
                     modifier = Modifier.size(80.dp)
@@ -241,7 +264,7 @@ fun DashboardScreen2(navController: NavController){
 
 
             Column() {
-                Image(painter = painterResource(R.drawable.zip),
+                Image(painter = painterResource(R.drawable.word),
                     contentDescription = "",
                     contentScale =ContentScale.Crop,
                     modifier = Modifier.size(80.dp)
@@ -263,77 +286,9 @@ fun DashboardScreen2(navController: NavController){
 
         //End of row
 
-        //Row
-        Row(
-            modifier = Modifier.padding(30.dp).horizontalScroll(rememberScrollState())
-        ) {
-            Column() {
-                Image(painter = painterResource(R.drawable.adobe),
-                    contentDescription = "",
-                    contentScale =ContentScale.Crop,
-                    modifier = Modifier.size(80.dp)
-                )
-                Text(text = "Layout Docs",
-                    fontSize = 17.sp,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Text(
-                    text = "PDF . 10MB",
-                    fontSize = 15.sp,
-
-                    )
-
-            }
-
-            Spacer(modifier = Modifier.width(30.dp))
 
 
-            Column() {
-                Image(painter = painterResource(R.drawable.presentation),
-                    contentDescription = "",
-                    contentScale =ContentScale.Crop,
-                    modifier = Modifier.size(80.dp)
-                )
-                Text(text = "Presentation",
-                    fontSize = 17.sp,
-                    fontWeight = FontWeight.Bold
-                )
 
-                Text(
-                    text = "MOV . 10MB",
-                    fontSize = 15.sp,
-
-                    )
-
-            }
-
-
-            Spacer(modifier = Modifier.width(30.dp))
-
-
-            Column() {
-                Image(painter = painterResource(R.drawable.zip),
-                    contentDescription = "",
-                    contentScale =ContentScale.Crop,
-                    modifier = Modifier.size(80.dp)
-                )
-                Text(text = "All Assets",
-                    fontSize = 17.sp,
-                    fontWeight = FontWeight.Bold
-                )
-
-                Text(
-                    text = "ZIP . 10MB",
-                    fontSize = 15.sp,
-
-                    )
-
-            }
-
-        }
-
-        //End of row
 
     }
 
