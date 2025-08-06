@@ -29,6 +29,8 @@ import com.shirleen.swaggy.R
 import com.shirleen.swaggy.navigation.ROUT_DASHBOARD2
 import com.shirleen.swaggy.navigation.ROUT_HOME
 import com.shirleen.swaggy.navigation.ROUT_REGISTER
+import com.shirleen.swaggy.ui.theme.newPur
+import com.shirleen.swaggy.ui.theme.newPurple
 import com.shirleen.swaggy.viewmodel.AuthViewModel
 
 @Composable
@@ -81,7 +83,7 @@ fun LoginScreen(
                 Text(
                     text = "Welcome Back!",
                     fontSize = 40.sp,
-                    fontFamily = FontFamily.Cursive,
+                    fontFamily = FontFamily.Monospace,
                     fontWeight = FontWeight.Bold
                 )
             }
@@ -140,7 +142,7 @@ fun LoginScreen(
                     .height(50.dp)
                     .background(
                         brush = Brush.horizontalGradient(
-                            colors = listOf(Color(0xFF00C6FF), Color(0xFF0072FF))
+                            colors = listOf(newPurple, (newPur))
                         ),
                         shape = RoundedCornerShape(12.dp)
                     ),

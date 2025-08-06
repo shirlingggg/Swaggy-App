@@ -29,6 +29,9 @@ import com.shirleen.swaggy.model.User
 import com.shirleen.swaggy.navigation.ROUT_LOGIN
 import com.shirleen.swaggy.viewmodel.AuthViewModel
 import com.shirleen.swaggy.R
+import com.shirleen.swaggy.ui.theme.newPur
+import com.shirleen.swaggy.ui.theme.newPurple
+
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun RegisterScreen(
@@ -61,7 +64,7 @@ fun RegisterScreen(
             Text(
                 "Create Your Account",
                 fontSize = 40.sp,
-                fontFamily = FontFamily.Cursive
+                fontFamily = FontFamily.Monospace
             )
         }
 
@@ -178,7 +181,7 @@ fun RegisterScreen(
                 .height(50.dp)
                 .background(
                     brush = Brush.horizontalGradient(
-                        colors = listOf(Color(0xFF00C6FF), Color(0xFFD2D6DB))
+                        colors = listOf(newPurple, newPur)
                     ),
                     shape = MaterialTheme.shapes.medium
                 ),
