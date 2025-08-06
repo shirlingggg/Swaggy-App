@@ -64,7 +64,7 @@ fun RegisterScreen(
             Text(
                 "Create Your Account",
                 fontSize = 40.sp,
-                fontFamily = FontFamily.Monospace
+                fontFamily = FontFamily.SansSerif
             )
         }
 

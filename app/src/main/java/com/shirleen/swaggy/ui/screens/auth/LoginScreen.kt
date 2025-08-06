@@ -83,7 +83,7 @@ fun LoginScreen(
                 Text(
                     text = "Welcome Back!",
                     fontSize = 40.sp,
-                    fontFamily = FontFamily.Monospace,
+                    fontFamily = FontFamily.SansSerif,
                     fontWeight = FontWeight.Bold
                 )
             }
