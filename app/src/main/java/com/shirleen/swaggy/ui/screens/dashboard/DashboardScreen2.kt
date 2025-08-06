@@ -43,7 +43,6 @@ import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import androidx.navigation.compose.rememberNavController
 import com.shirleen.swaggy.R
-import com.shirleen.swaggy.R.drawable.man3
 import com.shirleen.swaggy.ui.theme.newGreen
 import com.shirleen.swaggy.ui.theme.newPurple
 

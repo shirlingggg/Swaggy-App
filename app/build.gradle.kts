@@ -2,6 +2,8 @@ plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
     alias(libs.plugins.kotlin.compose)
+    id ("kotlin-kapt")
+
 }
 
 android {
@@ -66,6 +68,13 @@ dependencies {
 
     //Bookmark icon
     implementation("androidx.compose.material:material-icons-extended-android:1.7.8")
+
+    //Room Database
+    implementation("androidx.room:room-runtime:2.6.1")
+    kapt("androidx.room:room-compiler:2.6.1")
+    implementation("androidx.room:room-ktx:2.6.1")
+    //End
+
 
 
 }
