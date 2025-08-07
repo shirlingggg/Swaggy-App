@@ -26,8 +26,8 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavController
 import com.shirleen.swaggy.R
-import com.shirleen.swaggy.navigation.ROUT_DASHBOARD2
-import com.shirleen.swaggy.navigation.ROUT_HOME
+import com.shirleen.swaggy.navigation.ROUT_ADD_PRODUCT
+import com.shirleen.swaggy.navigation.ROUT_PRODUCT_LIST
 import com.shirleen.swaggy.navigation.ROUT_REGISTER
 import com.shirleen.swaggy.ui.theme.newPur
 import com.shirleen.swaggy.ui.theme.newPurple
@@ -50,9 +50,9 @@ fun LoginScreen(
                 Toast.makeText(context, "Invalid Credentials", Toast.LENGTH_SHORT).show()
             } else {
                 if (user.role == "Buyer") {
-                    navController.navigate(ROUT_DASHBOARD2) {}
+                    navController.navigate(ROUT_PRODUCT_LIST) {}
                 } else {
-                    navController.navigate(ROUT_HOME) {}
+                    navController.navigate(ROUT_ADD_PRODUCT) {}
                 }
             }
         }

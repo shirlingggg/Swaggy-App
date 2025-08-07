@@ -1,0 +1,14 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+
+    <!-- Background rounded rectangle -->
+    <path
+        android:fillColor="#541DA2"
+        android:pathData="M8,0h92a8,8 0 0 1 8,8v92a8,8 0 0 1 -8,8h-92a8,8 0 0 1 -8,-8v-92a8,8 0 0 1 8,-8z" />
+
+    <!-- Text: Unfortunately, VectorDrawable does NOT support rendering text directly. -->
+    <!-- You can use a workaround below -->
+</vector>
